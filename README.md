@@ -14,7 +14,12 @@ Essa API é um simples cadastro de Livros, com inclusão e posterior obtenção 
 
 ## Proposta de implementação:
 
-### 1. Crie um endpoint `POST` chamado `/create-user` que vai receber um objeto JSON com a seguinte estrutura:
+### 1. Organização do projeto em pastas seguindo o padrão MVC;
+
+- Reorganizar melhor a estrutura do projeto em pastas e arquivos contextualizados.
+- Pode ir desenvolvendo essa parte ao longo dos próximos passos.
+
+### 2. Crie um endpoint `POST` chamado `/create-user` que vai receber um objeto JSON com a seguinte estrutura:
 
 ```
 {
@@ -28,7 +33,7 @@ Essa API é um simples cadastro de Livros, com inclusão e posterior obtenção 
 - Armazenar as informações recebida em um novo item no ARRAY em memória, usando o password já criptografado e criando um ID randômico;
 - Retornar esse novo objeto como reposta usando o HTTP correto;
 
-### 2. Crie um endpoint `POST` chamado `/login` que vai receber um objeto JSON com a seguinte estrutura:
+### 3. Crie um endpoint `POST` chamado `/login` que vai receber um objeto JSON com a seguinte estrutura:
 
 ```
 {
@@ -40,13 +45,12 @@ Essa API é um simples cadastro de Livros, com inclusão e posterior obtenção 
 - Efetuar a consulta no banco de dados por esse username e senha. Lembrando que a senha está criptografada no banco/array em memória;
 - Retonar um token de acesso usando o [JWT](https://jwt.io/);
 
-### 3. Alterar o endpoint `/create-book` para receber o token no "Header - Authentication - Bearer Token":
+### 4. Alterar o endpoint `/create-book` para receber o token no "Header - Authentication - Bearer Token":
 
 - Validar se o token recebido está correto;
 - Se não, retornar erro HTTP informando que houve erro na autenticação;
 - Se sim, retornar como já está hoje implementado;
 
-### 4. Desenvolver testes para as implementações:
+### 5. Desenvolver testes para as implementações:
 
-- Desenvolver um teste para a sua implementação usando o [Jest](https://jestjs.io/pt-BR/);
-- Reorganizar melhor a estrutura do projetos em pastas e arquivos contextualizados;
+- Desenvolver testes que julgar pertinente de acordo com a sua implementação. Usar o [Jest](https://jestjs.io/pt-BR/) para os testes;
